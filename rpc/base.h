@@ -124,4 +124,6 @@ struct CancelParams {
   static std::optional<CancelParams> validate(json::value &) noexcept;
 };
 
+// TODO: Progress Support : https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#progress
+
 } // namespace rpc::base
