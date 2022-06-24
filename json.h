@@ -79,6 +79,17 @@ public:
   constexpr bool is_string() const noexcept {
     return std::holds_alternative<std::u16string>(m_variant);
   }
+  // Checks if number is an integer, using a comparison tolerance
+  constexpr std::optional<i64> try_integer(f64 tolerance) const noexcept {
+    if (!is_number())
+      return std::nullopt;
+    auto const value = as_number();
+    if ((value - std::floor(value)) <= tolerance) {
+      return static_cast<i64>(value);
+    } else {
+      return std::nullopt;
+    }
+  }
   friend struct fmt::formatter<value>;
 };
 

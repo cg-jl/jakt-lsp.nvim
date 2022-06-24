@@ -7,5 +7,8 @@ fmtdep = fmtlib.dependency('fmt')
 
 inc = include_directories('.')
 
-executable('jakt-lsp', sources : ['main.cpp', 'json.cpp'], include_directories : inc,
+executable('jakt-lsp', sources : [
+  'main.cpp', 
+  'json.cpp',
+  'rpc/rpc.cpp',], include_directories : inc,
     dependencies : [fmtdep])
