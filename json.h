@@ -15,6 +15,7 @@ namespace types {
 class value;
 
 using array = std::vector<value>;
+using string = std::u16string;
 class object {
   using assoc_type = std::vector<std::pair<std::u16string, value>>;
   assoc_type m_assoc_array;
