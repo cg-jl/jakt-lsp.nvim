@@ -1,4 +1,4 @@
-# LSP server for Jakt
+# LSP server for [Jakt](https://github.com/SerenityOS/jakt)
 
 This is a middleware that talks both to the LSP client and to the Jakt compiler. It receives
 requests from LSP client in one format, queries information about the code to Jakt compiler,
