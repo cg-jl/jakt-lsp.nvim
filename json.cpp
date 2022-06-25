@@ -191,7 +191,7 @@ std::optional<std::u16string> Parser::parse_string() noexcept {
     }
   }
 
-  if (is_eof())
+  if (is_eof() || unchecked_char() != '"')
     return {}; // unfinished string
   accept_current();
 
@@ -214,6 +214,7 @@ std::optional<types::array> Parser::parse_array() noexcept {
 
   if (current_char() != ']')
     return std::nullopt;
+  accept_current();
 
   return values;
 }
