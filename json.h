@@ -62,7 +62,7 @@ public:
   constexpr bool &as_bool() { return std::get<bool>(m_variant); }
 
   constexpr bool is_null() const noexcept {
-    return m_variant.valueless_by_exception();
+    return std::holds_alternative<null>(m_variant);
   }
   constexpr bool is_object() const noexcept {
     return std::holds_alternative<object>(m_variant);
